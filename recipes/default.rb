@@ -24,3 +24,7 @@ if node[:etc][:passwd][node[:user]].nil?
     shell "/bin/zsh"
   end
 end
+
+group 'staff' do
+  members [ node[:user] ]
+end
